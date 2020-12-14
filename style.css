@@ -1,0 +1,58 @@
+.divstyle{
+    margin: auto;
+    border-radius: 1em;
+    padding: 2em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    box-shadow: 0.5em 0.5em 1.5em #0a0a0f, -0.5em -0.5em 1.5em #32323c;
+}
+.textstyle{
+    font-size: 1.3em;
+}
+.titlestyle{
+    font-size: 2em;
+}
+.sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1em;
+}
+.divstickontop{
+    background-color:#2fff9e;
+    width:12%;
+    display: inline-block;
+}
+.alignmiddle{
+    text-align: center;
+}
+.awhite{
+    color: white;
+    text-decoration: none;
+}
+
+body{
+    background-image: url(images/background.jpg);
+    background-repeat: no-repeat;background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+#side ol,ul{
+    list-style: none;
+}
+
+#side li{
+    display: inline;
+    padding-right: 2em;
+}
+
+#white a{
+    color:white;
+    text-decoration: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
