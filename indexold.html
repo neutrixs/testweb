@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hmmm</title>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <style>
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            /* Firefox */
+            input[type=number] {
+              -moz-appearance: textfield;
+            }
+            .buttontheme {
+                background-color:rgb(0,155,255) ;
+                border: none;
+                color: white;
+                text-align: center;
+                padding: 5px 5px;
+                font-size: 3.3vmin;
+                border-radius: 1.5vmin;
+                cursor: pointer;
+            }
+            .inputstyle {
+                font-size: 3.3vmin;
+                margin-bottom: 1vmin;
+                border: none;
+                border-radius: 1.5vmin;
+                background-color: rgb(12,12,12);
+                color: white;
+            }
+        </style>
+    </head>
+    <body id="bodybody" style="font-family: Arial, Helvetica, sans-serif; background-color: #1e1e2d; font-size: 3.3vmin;" text="#FFFFFF">
+        <div style="background-color: rgb(0,155,255); padding: 1%; border-radius: 1.5vmin;">
+            <p style="font-size:5vmin; color: rgb(255,255,0); text-align: center;">WELCOME TO MY FUCKING WEIRD PAGE VERSION 1.0!</p>
+        </div>
+        <p style="text-align: right;"><button class="buttontheme" id="chthmbt" onclick="switchtheme()">Switch to light mode</button></p>
+        <p>Enter a password and i'll give you an image!</p>
+        <input onkeypress="chkenter()" id="ipt" class="inputstyle" type="password" size="25">
+        <button class="buttontheme" onclick="checkpswd()">Check!</button>
+        <script>
+            //enter key on pswd
+            function chkenter() {
+                if(event.keyCode == 13) {
+                    checkpswd();
+                }
+            }
+            function switchtheme() {
+                var current = document.getElementById("chthmbt").innerHTML;
+                //change to light mode
+                if(current == "Switch to light mode") {
+                    document.getElementById("bodybody").style.backgroundColor= "#FFFFFF"
+                    document.getElementById("bodybody").style.color= "#000000"
+                    document.getElementById("chthmbt").innerHTML = "Switch to dark mode"
+                    document.getElementById("ipt").style.backgroundColor = "rgb(155,155,155)"
+                    document.getElementById("ipt").style.color = "black"
+                    document.getElementById("twofunct").style.backgroundColor = "rgb(155,155,155)"
+                    document.getElementById("twofunct").style.color = "black"
+                }
+                // change to dark mode 
+                else {
+                    document.getElementById("bodybody").style.backgroundColor= "#1e1e2d"
+                    document.getElementById("bodybody").style.color= "#FFFFFF"
+                    document.getElementById("chthmbt").innerHTML = "Switch to light mode"
+                    document.getElementById("ipt").style.backgroundColor = "rgb(12,12,12)"
+                    document.getElementById("ipt").style.color = "white"
+                    document.getElementById("twofunct").style.backgroundColor = "rgb(12,12,12)"
+                    document.getElementById("twofunct").style.color = "white"
+                }
+            }
+            function checkpswd() {
+                var ipt = document.getElementById("ipt").value;
+                // Kien giang
+                if(ipt == "kiengiang") {
+                    document.getElementById("otpt").src="images/kg.png"
+                    document.getElementById("otpt").style.height="75vmin"
+                    document.getElementById("otpt").style.width="75vmin"
+                    document.getElementById("oops").innerHTML = ""
+                }
+                //wrong pass
+                else {
+                    document.getElementById("oops").innerHTML = "Oops, Wrong password!"
+                    document.getElementById("otpt").src=""
+                    document.getElementById("otpt").style.height=""
+                    document.getElementById("otpt").style.width=""
+                }
+                //empty
+                if(ipt == "") {
+                    document.getElementById("oops").innerHTML = "Please enter a password!"
+                    document.getElementById("otpt").src=""
+                    document.getElementById("otpt").style.height=""
+                    document.getElementById("otpt").style.width=""
+                }
+                // Neutrix
+                if(ipt == "neutrix") {
+                    document.getElementById("otpt").src="images/final.jpg"
+                    document.getElementById("otpt").style.height="75vmin"
+                    document.getElementById("otpt").style.width="75vmin"
+                    document.getElementById("oops").innerHTML = ""
+                }
+                // banana
+                if((ipt == "bananaemoji") || (ipt == "banana")) {
+                    document.getElementById("otpt").src="images/banana_1f34c.png"
+                    document.getElementById("otpt").style.height="50vmin"
+                    document.getElementById("otpt").style.width="50vmin"
+                    document.getElementById("oops").innerHTML= ""
+                }
+            }
+            //After picking a choices
+            function pickchoices () {
+                var valuepick = document.getElementById("choicenumber").checked;
+                var valuepick1 = document.getElementById("choicerepeat").checked;
+                var valuepick2 = document.getElementById("choicerandom").checked;
+                // change text box
+                //valuepick = number
+                //valuepick1 = repeattext
+                if(valuepick == true) {
+                    document.getElementById("twofunct").type= "number"
+                    document.getElementById("twofunct").style.visibility= "visible"
+                    document.getElementById("resulttest").innerHTML= ""
+                }
+                if(valuepick1 == true) {
+                    document.getElementById("twofunct").type= "text"
+                    document.getElementById("twofunct").style.visibility= "visible"
+                    document.getElementById("resulttest").innerHTML= ""
+                }
+                if(valuepick2 == true) {
+                    document.getElementById("randommm").style.visibility= "visible"
+                    document.getElementById("twofunct").style.visibility= "hidden"
+                    document.getElementById("resulttest").innerHTML= ""
+                }
+                if(valuepick2 == false) {
+                    document.getElementById("randommm").style.visibility="hidden"
+                }
+                if(valuepick == true || valuepick1 == true || valuepick2 == true) {
+                    document.getElementById("uncheckradio").style.visibility= "visible"
+                }
+            }
+            //checking choices picked oninput then run function
+            function checkkkk() {
+                var valuepick = document.getElementById("choicenumber").checked;
+                var valuepick1 = document.getElementById("choicerepeat").checked;
+                if( valuepick == true) {
+                    number();
+                }
+                if(valuepick1 == true) {
+                    repeat();
+                }
+            }
+            function repeat () {
+                var txtipt = document.getElementById("twofunct").value;
+                document.getElementById("resulttest").innerHTML = txtipt
+            }
+            function number() {
+                var txtipt = document.getElementById("twofunct").value;
+                //number result
+                if(txtipt.includes("69")
+                || txtipt.includes("420")) {
+                    document.getElementById("resulttest").innerHTML = "NICE"
+                }
+                else {
+                    document.getElementById("resulttest").innerHTML = "not a nice number :\/"
+                }
+                if(txtipt == "") {
+                    document.getElementById("resulttest").innerHTML = "Please enter a number!"
+                }
+                if(txtipt == "69420") {
+                    document.getElementById("resulttest").innerHTML = "SUPER VERY FUCKING NICE!"
+                }
+            }
+            //simple function for uncheck
+            function uncheck() {
+                //detect which one is currently checked
+                var valuepick = document.getElementById("choicenumber").checked;
+                var valuepick1 = document.getElementById("choicerepeat").checked;
+                var valuepick2 = document.getElementById("choicerandom").checked;
+                //start uncheck
+                if (valuepick == true) {
+                    document.getElementById("choicenumber").checked= false
+                }
+                if (valuepick1 == true) {
+                    document.getElementById("choicerepeat").checked= false 
+                }
+                if(valuepick2 == true) {
+                    document.getElementById("choicerandom").checked= false
+                }
+                //to hide text and button
+                if (valuepick == true || valuepick1 == true || valuepick2 == true) {
+                    document.getElementById("uncheckradio").style.visibility = "hidden"
+                    document.getElementById("twofunct").style.visibility= "hidden"
+                    document.getElementById("randommm").style.visibility= "hidden"
+                    document.getElementById("resulttest").innerHTML= ""
+                }
+            }
+            //function for random number
+            function randomnumber() {
+                var rndom = Math.floor(Math.random() * 101);
+                document.getElementById("resulttest").innerHTML= rndom
+            }
+        </script>
+        <br/><br/>
+        <span id="oops"></span>
+        <img id="otpt" >
+        <br/><br/><hr/>
+        Select what you want! <br/> <br/>
+        <input type="radio" id="choicenumber" name="choice" value="numberclicked" oninput="pickchoices()"> Is number nice? </input> <br/>
+        <input type="radio" id="choicerepeat" name="choice" value="repeatclicked" oninput="pickchoices()"> Repeat what you type </input> <br/>
+        <input type="radio" id="choicerandom" name="choice" value="randomclicked" oninput="pickchoices()"> Generate random number </input><br/>
+        <input id="twofunct" style="visibility: hidden;" class="inputstyle" type="text" oninput="checkkkk()">
+        <button id="randommm" style="visibility: hidden;" class="buttontheme" onclick="randomnumber()">Random!</button>
+        <!--Uncheck-->
+        <button id="uncheckradio" style="visibility: hidden;" class="buttontheme" onclick="uncheck()">Cancel</button>
+        <br /> <br/>
+        <p style="text-align: center; font-size: 4vmin;" id="resulttest"></p> <br/>
+    </body>
+</html>
