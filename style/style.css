@@ -5,6 +5,7 @@
     padding-top: 0.1em;
     padding-bottom: 0.1em;
     box-shadow: 0.5em 0.5em 1.5em #0a0a0f, -0.5em -0.5em 1.5em #323232;
+    transition: 500ms;
 }
 .textstyle{
     font-size: 1.3em;
@@ -16,17 +17,18 @@
     position: -webkit-sticky;
     position: sticky;
     top: 1em;
-}
-.divstickontop{
-    background-color:#2fff9e;
-    width:12%;
-    display: inline-block;
+    padding-left: 0%;
+    padding-right: 0%;
 }
 .alignmiddle{
     text-align: center;
 }
-.awhite{
+.white{
     color: white;
+    text-decoration: none;
+}
+.black{
+    color:black;
     text-decoration: none;
 }
 .image{
@@ -36,6 +38,26 @@
 }
 .oldshadow{
     box-shadow: 0.5em 0.5em 1.5em #0a0a0f, -0.5em -0.5em 1.5em #32323c;
+}
+.topfollow{
+    background-color:#009bff;
+    width: 95%;
+    margin: auto;
+}
+.fitleft{
+    width: fit-content;
+    margin-left: 0%;
+    display:inline-block;
+}
+.noshadow{
+    box-shadow: none;
+    border: none;
+}
+.shadow{
+    box-shadow: 0.5em 0.5em 1.5em #000000, -0.5em -0.5em 1.5em #323232;
+}
+.marginr{
+    margin-right: 1em;
 }
 
 body{

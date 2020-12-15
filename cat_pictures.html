@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="script/changecolor.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style/style.css">
         <title>Cat pictures</title>
     </head>
     <body style="background-image: url(images/background3.jpg);">
         <br>
-        <div style="background-color:#009bff;width: 90%;margin: auto;" class="divstyle sticky">
-            <p>
-                <ul id="side">
-                    <li id="side"><a class="awhite" href="../">Home</a></li>
-                    <li id="side"><a class="awhite" href="https://github.com/neutrixs/testweb" target="_blank">Source code</a></li>
-                    <li id="side"><a class="awhite" href="#">Twitter</a></li>
-                    <li id="side"><a class="awhite" href="cat_pictures.html">Cat pictures</a></li>
-                </ul>
-            </p>
+        <!--stick to the top(copy to everything)-->
+        <div class="divstyle sticky topfollow">
+            <div id="link1" onmouseout="changecolor('link1','transparent')" onmouseover="changecolor('link1','#00cc6d')" class="divstyle noshadow fitleft marginr" style="background-color: transparent;">
+                <p><a href="../" class="white">Home</a></p>
+            </div>
+            <div id="link2" onmouseout="changecolor('link2','transparent')" onmouseover="changecolor('link2','#00cc6d')" class="divstyle noshadow fitleft marginr" style="background-color: transparent;">
+                <p><a href="https://github.com/neutrixs/testweb" class="white" target="_blank">Source code</a></p>
+            </div>
+            <div id="link3" onmouseout="changecolor('link3','transparent')" onmouseover="changecolor('link3','#00cc6d')" class="divstyle noshadow fitleft marginr" style="background-color: transparent;">
+                <p><a href="" class="white">Twitter</a></p>
+            </div>
+            <div id="link4" onmouseout="changecolor('link4','transparent')" onmouseover="changecolor('link4','#00cc6d')" class="divstyle noshadow fitleft marginr" style="background-color: transparent;">
+                <p><a href="./cat_pictures.html" class="white">Cat pictures</a></p>
+            </div>
         </div>
         <br><br><br>
         <div style="background-color: transparent;width: 75%;margin: auto;">
